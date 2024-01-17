@@ -1,0 +1,134 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.Core", "NebulaLearning.Core\NebulaLearning.Core.csproj", "{4FC24BDC-0FC8-4AEF-9D51-3DEBCAF75134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.Core.Net4x", "NebulaLearning.Core.Net4x\NebulaLearning.Core.Net4x.csproj", "{79764771-1481-437B-B2BC-E17EBE6426F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.DataAccess.Net4x", "NebulaLearning.DataAccess.Net4x\NebulaLearning.DataAccess.Net4x.csproj", "{A1E92578-8AD8-4821-AD1B-1E393C5D1F5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.DataAccess", "NebulaLearning.DataAccess\NebulaLearning.DataAccess.csproj", "{63896874-60A3-4057-B820-E0713FE7586C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.Business.Net4x", "NebulaLearning.Business.Net4x\NebulaLearning.Business.Net4x.csproj", "{18366511-2312-48F0-A0AF-C15D5DF3F7CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.Business", "NebulaLearning.Business\NebulaLearning.Business.csproj", "{BC156DEC-EBAE-4BC6-A295-4163768B0768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.DataAccess.Net4x.Tests", "NebulaLearning.DataAccess.Net4x.Tests\NebulaLearning.DataAccess.Net4x.Tests.csproj", "{409892EF-25C3-409D-BD6F-17A3E3AE483C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.Business.Net4x.Tests", "NebulaLearning.Business.Net4x.Tests\NebulaLearning.Business.Net4x.Tests.csproj", "{DCB1C6FF-53DF-49CC-9FC0-4B91E35A7ADE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.Business.Tests", "NebulaLearning.Business.Tests\NebulaLearning.Business.Tests.csproj", "{F98CB5FA-A87A-4AF4-94C7-ECBE1D0021C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.Entities", "NebulaLearning.Entities\NebulaLearning.Entities.csproj", "{21BAC873-2F28-4760-A9A0-FDE097181095}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.Entities.Net4x", "NebulaLearning.Entities.Net4x\NebulaLearning.Entities.Net4x.csproj", "{F7C93F33-FFE0-40E7-8697-052604F55FB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI", "NebulaLearning.MVCWebUI\NebulaLearning.MVCWebUI.csproj", "{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI.Tests", "NebulaLearning.MVCWebUI.Tests\NebulaLearning.MVCWebUI.Tests.csproj", "{731E388B-71DB-4A0F-991E-6B22FC173685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.DataAccess.Tests", "NebulaLearning.DataAccess.Tests\NebulaLearning.DataAccess.Tests.csproj", "{666AA66E-4C99-4E42-B138-A5B73DF2744E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.WebAPI", "NebulaLearning.WebAPI\NebulaLearning.WebAPI.csproj", "{A75B6C59-09F4-41C1-B623-D1D243382CD0}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NebulaLearning.WCFService", "NebulaLearning.WCFService\", "{D0E810DD-99ED-4660-94BA-F56B72E3E870}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53414"
+		Debug.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53414\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53414"
+		Release.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53414\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53414"
+		SlnRelativePath = "NebulaLearning.WCFService\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FC24BDC-0FC8-4AEF-9D51-3DEBCAF75134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC24BDC-0FC8-4AEF-9D51-3DEBCAF75134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC24BDC-0FC8-4AEF-9D51-3DEBCAF75134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC24BDC-0FC8-4AEF-9D51-3DEBCAF75134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79764771-1481-437B-B2BC-E17EBE6426F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79764771-1481-437B-B2BC-E17EBE6426F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79764771-1481-437B-B2BC-E17EBE6426F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79764771-1481-437B-B2BC-E17EBE6426F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E92578-8AD8-4821-AD1B-1E393C5D1F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E92578-8AD8-4821-AD1B-1E393C5D1F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E92578-8AD8-4821-AD1B-1E393C5D1F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E92578-8AD8-4821-AD1B-1E393C5D1F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63896874-60A3-4057-B820-E0713FE7586C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63896874-60A3-4057-B820-E0713FE7586C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63896874-60A3-4057-B820-E0713FE7586C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63896874-60A3-4057-B820-E0713FE7586C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18366511-2312-48F0-A0AF-C15D5DF3F7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18366511-2312-48F0-A0AF-C15D5DF3F7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18366511-2312-48F0-A0AF-C15D5DF3F7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18366511-2312-48F0-A0AF-C15D5DF3F7CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC156DEC-EBAE-4BC6-A295-4163768B0768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC156DEC-EBAE-4BC6-A295-4163768B0768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC156DEC-EBAE-4BC6-A295-4163768B0768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC156DEC-EBAE-4BC6-A295-4163768B0768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{409892EF-25C3-409D-BD6F-17A3E3AE483C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{409892EF-25C3-409D-BD6F-17A3E3AE483C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{409892EF-25C3-409D-BD6F-17A3E3AE483C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{409892EF-25C3-409D-BD6F-17A3E3AE483C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB1C6FF-53DF-49CC-9FC0-4B91E35A7ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB1C6FF-53DF-49CC-9FC0-4B91E35A7ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB1C6FF-53DF-49CC-9FC0-4B91E35A7ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB1C6FF-53DF-49CC-9FC0-4B91E35A7ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F98CB5FA-A87A-4AF4-94C7-ECBE1D0021C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F98CB5FA-A87A-4AF4-94C7-ECBE1D0021C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F98CB5FA-A87A-4AF4-94C7-ECBE1D0021C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F98CB5FA-A87A-4AF4-94C7-ECBE1D0021C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BAC873-2F28-4760-A9A0-FDE097181095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BAC873-2F28-4760-A9A0-FDE097181095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BAC873-2F28-4760-A9A0-FDE097181095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BAC873-2F28-4760-A9A0-FDE097181095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731E388B-71DB-4A0F-991E-6B22FC173685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731E388B-71DB-4A0F-991E-6B22FC173685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731E388B-71DB-4A0F-991E-6B22FC173685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731E388B-71DB-4A0F-991E-6B22FC173685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E36FF039-745D-467C-AECC-0DBF6FCBD790}
+	EndGlobalSection
+EndGlobal
