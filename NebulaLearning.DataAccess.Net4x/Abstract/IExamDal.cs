@@ -1,14 +1,13 @@
 ﻿using NebulaLearning.Core.Net4x.DataAccess;
-using NebulaLearning.Entities.Concrete;
-using System;
+using NebulaLearning.Entities.Net4x.ComplexTypes;
+using NebulaLearning.Entities.Net4x.Concrete;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NebulaLearning.DataAccess.Net4x.Abstract
 {
     public interface IExamDal:IEntityRepository<Exam>
     {
+        //First Complex Type here, buraya yazılan methodlar Concrete klasoundeki miras alanlar implemente eder.
+        List<ExamDetail> GetExamDetailList();
     }
 }

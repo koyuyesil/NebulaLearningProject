@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NebulaLearning.Core.Net4x.Entities
+﻿namespace NebulaLearning.Core.Net4x.Entities
 {
     public interface IEntity
     {
