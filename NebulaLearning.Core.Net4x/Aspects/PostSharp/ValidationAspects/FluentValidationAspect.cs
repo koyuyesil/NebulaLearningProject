@@ -5,7 +5,7 @@ using PostSharp.Serialization;
 using System;
 using System.Linq;
 
-namespace NebulaLearning.Core.Net4x.Aspects.PostSharp
+namespace NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects
 {
 
     [PSerializable]//aspect serileştirilebilir olmalı

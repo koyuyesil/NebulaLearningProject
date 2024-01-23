@@ -66,6 +66,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -82,7 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aspects\PostSharp\FluentValidationAspect.cs" />
+    <Compile Include="Aspects\PostSharp\CacheAspects\CacheAspect.cs" />
+    <Compile Include="Aspects\PostSharp\CacheAspects\CacheRemoveAspect.cs" />
+    <Compile Include="Aspects\PostSharp\ValidationAspects\FluentValidationAspect.cs" />
+    <Compile Include="Aspects\PostSharp\TransactionAspects\TransactionScopeAspect.cs" />
+    <Compile Include="CrossCuttingConserns\Caching\ICacheManager.cs" />
+    <Compile Include="CrossCuttingConserns\Caching\Microsoft\MemoryCacheManager.cs" />
     <Compile Include="CrossCuttingConserns\Validation\FluentValidation\ValidatorTool.cs" />
     <Compile Include="DataAccess\EntityFramework\QueryableRepository.cs" />
     <Compile Include="DataAccess\EntityFramework\RepositoryBase.cs" />
