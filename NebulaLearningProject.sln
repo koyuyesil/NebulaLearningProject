@@ -50,6 +50,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NebulaLearning.WCFService",
 		SlnRelativePath = "NebulaLearning.WCFService\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI", "NebulaLearning.MVCWebUI\NebulaLearning.MVCWebUI.csproj", "{66B3B28C-029C-4902-80DF-B330A4803163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI.Tests", "NebulaLearning.MVCWebUI.Tests\NebulaLearning.MVCWebUI.Tests.csproj", "{DF592462-C820-4C0F-B9F4-EB43613694FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,6 +116,14 @@ Global
 		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{66B3B28C-029C-4902-80DF-B330A4803163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B3B28C-029C-4902-80DF-B330A4803163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B3B28C-029C-4902-80DF-B330A4803163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B3B28C-029C-4902-80DF-B330A4803163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

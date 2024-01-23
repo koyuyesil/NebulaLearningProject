@@ -1,0 +1,4 @@
+﻿ASP.NET Web Application (.NET Framework) Boş proje seçilir.
+MVC işaretlenir
+Birim Test işaretlenir.
+Web.config ve Log4net.config ayarla
