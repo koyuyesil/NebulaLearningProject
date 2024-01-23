@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using NebulaLearning.Core.Net4x.Aspects.PostSharp.LogAspects;
+using NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net.Loggers;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -13,6 +15,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+// Aspecte parametre olarak namespace yazılırsa o namespace daki tüm sınıflar loglanır.
+[assembly: LogAspect(typeof(DatabaseLogger),AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
+[assembly: LogAspect(typeof(FileLogger),AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
 
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
 // COM bileşenleri için görünmez yapar. Bu bütünleştirilmiş koddaki bir türe

@@ -13,6 +13,7 @@ using System.Transactions;
 
 namespace NebulaLearning.Business.Net4x.Concrete.Managers
 {
+    //log aspect burdan silinip assembly seviyesine taşındı AssemblyInfo.cs
     public class ExamManager : IExamService
     {
         private IExamDal _examDal;
@@ -26,8 +27,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         // postsharp ücretli bir liblary
         // aspect isimlerini biz giriyoruz.
         [FluentValidationAspect(typeof(ExamValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]// minute parametre alabilir
-        //[CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]// minute parametre alabilir
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]// minute parametre alabilir [CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]
         public Exam AddExam(Exam exam)
         {
             return _examDal.Add(exam);
@@ -40,8 +40,6 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager),60)]// minute parametre alabilir 
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
         public List<Exam> GetExamList()
         {
             return _examDal.GetList();
