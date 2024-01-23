@@ -25,11 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.Entities", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.Entities.Net4x", "NebulaLearning.Entities.Net4x\NebulaLearning.Entities.Net4x.csproj", "{F7C93F33-FFE0-40E7-8697-052604F55FB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI", "NebulaLearning.MVCWebUI\NebulaLearning.MVCWebUI.csproj", "{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI.Tests", "NebulaLearning.MVCWebUI.Tests\NebulaLearning.MVCWebUI.Tests.csproj", "{731E388B-71DB-4A0F-991E-6B22FC173685}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.DataAccess.Tests", "NebulaLearning.DataAccess.Tests\NebulaLearning.DataAccess.Tests.csproj", "{666AA66E-4C99-4E42-B138-A5B73DF2744E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.DataAccess.Tests", "NebulaLearning.DataAccess.Tests\NebulaLearning.DataAccess.Tests.csproj", "{666AA66E-4C99-4E42-B138-A5B73DF2744E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.WebAPI", "NebulaLearning.WebAPI\NebulaLearning.WebAPI.csproj", "{A75B6C59-09F4-41C1-B623-D1D243382CD0}"
 EndProject
@@ -104,14 +100,6 @@ Global
 		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7C93F33-FFE0-40E7-8697-052604F55FB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21A07D7F-B8C9-4A4C-B92F-66F4795EC9C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{731E388B-71DB-4A0F-991E-6B22FC173685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{731E388B-71DB-4A0F-991E-6B22FC173685}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{731E388B-71DB-4A0F-991E-6B22FC173685}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{731E388B-71DB-4A0F-991E-6B22FC173685}.Release|Any CPU.Build.0 = Release|Any CPU
 		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{666AA66E-4C99-4E42-B138-A5B73DF2744E}.Release|Any CPU.ActiveCfg = Release|Any CPU
