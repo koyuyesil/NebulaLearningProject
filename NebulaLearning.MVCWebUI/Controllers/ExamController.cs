@@ -1,9 +1,5 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Entities.Net4x.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace NebulaLearning.MVCWebUI.Controllers
@@ -29,6 +25,27 @@ namespace NebulaLearning.MVCWebUI.Controllers
         public string Add()
         {
             _examService.AddExam(new Exam { ExamCategoryId = 1, ExamName = "Coğrafya", ExamDuration = 30, ExamDescription = "Coğrafya 1. Sınav", ExamResult = 5 });
+            return "Added";
+        }
+        public string AddTransactional()
+        {
+            _examService.TransactionalOperation(
+                new Exam
+            {
+                ExamCategoryId = 1,
+                ExamName = "Coğrafya",
+                ExamDuration = 30,
+                ExamDescription = "Coğrafya 1. Sınav",
+                ExamResult = 5
+            }, new Exam
+            {
+                ExamId = 1,
+                ExamCategoryId = 4,
+                ExamName = "Coğrafya",
+                ExamDuration = 30,
+                ExamDescription = "Coğrafya 1. Sınav",
+                ExamResult = 5
+            });
             return "Added";
         }
     }

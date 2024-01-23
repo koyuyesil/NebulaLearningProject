@@ -13,8 +13,8 @@ namespace NebulaLearning.Business.Net4x.Abstract
 
         Exam UpdateExam(Exam exam);
 
-        void TransactionalOperation(Exam a, Exam b);
+        void TransactionalOperation(Exam toInsertExam, Exam toUpdateExam);
 
-        void TransactionalOperationDirtyCode(Exam a, Exam b);
+        void TransactionalOperationDirtyCode(Exam toInsertExam, Exam toUpdateExam);
     }
 }

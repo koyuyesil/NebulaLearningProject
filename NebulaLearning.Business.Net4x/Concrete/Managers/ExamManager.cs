@@ -1,11 +1,9 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.ValidationRules.FluentValidation;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects;
-using NebulaLearning.Core.Net4x.Aspects.PostSharp.LogAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.TransactionAspect;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft;
-using NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net.Loggers;
 using NebulaLearning.DataAccess.Net4x.Abstract;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System.Collections.Generic;
@@ -46,25 +44,26 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         }
 
         [TransactionScopeAspect]
-        public void TransactionalOperation(Exam a, Exam b)
+        [FluentValidationAspect(typeof(ExamValidator))]
+        public void TransactionalOperation(Exam toInsertExam, Exam toUpdateExam)
         {
-            _examDal.Add(a);
+            _examDal.Add(toInsertExam);
             //bussines codes
-            _examDal.Update(b);
+            _examDal.Update(toUpdateExam);
             // burada a ve b başarılı ise ok değilse error vermesi gerekmez mi
             // method aspect tarafından dispose edilse bile veritabanına kayıt olmaz mı?
 
         }
 
-        public void TransactionalOperationDirtyCode(Exam a, Exam b)
+        public void TransactionalOperationDirtyCode(Exam toInsertExam, Exam toUpdateExam)
         {
             using (TransactionScope scope = new TransactionScope())
             {
                 try
                 {
-                    _examDal.Add(a);
+                    _examDal.Add(toInsertExam);
                     //bussines codes
-                    _examDal.Update(b);
+                    _examDal.Update(toUpdateExam);
                     scope.Complete();
                     // bu yöntemin bir iyisi Action method kullanmak kirli kod örneği
                 }
@@ -74,6 +73,8 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
                 }
             }
         }
+
+        
 
         [FluentValidationAspect(typeof(ExamValidator))]
         public Exam UpdateExam(Exam exam)
