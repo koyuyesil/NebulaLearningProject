@@ -38,7 +38,7 @@ namespace NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects
             _cacheManager.RemoveByPattern(string.IsNullOrEmpty(_pattern)
                 ? string.Format("{0}.{1}.*",args.Method.ReflectedType.Namespace,args.Method.ReflectedType.Name):_pattern);
             // patterne uyan cache namespace ve name tamamen silinir
-            base.OnSuccess(args);
+            // base.OnSuccess(args);
         }
 
     }

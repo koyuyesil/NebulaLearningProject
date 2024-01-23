@@ -1,9 +1,11 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.ValidationRules.FluentValidation;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects;
+using NebulaLearning.Core.Net4x.Aspects.PostSharp.LogAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.TransactionAspect;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft;
+using NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net.Loggers;
 using NebulaLearning.DataAccess.Net4x.Abstract;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System.Collections.Generic;
@@ -38,6 +40,8 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager),60)]// minute parametre alabilir 
+        [LogAspect(typeof(DatabaseLogger))]
+        [LogAspect(typeof(FileLogger))]
         public List<Exam> GetExamList()
         {
             return _examDal.GetList();
