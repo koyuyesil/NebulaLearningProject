@@ -1,0 +1,22 @@
+﻿@model NebulaLearning.MVCWebUI.ExamListViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @foreach (var exam in Model.Exams)
+        {
+            @exam.ExamName
+            <br />
+        }
+    </div>
+</body>
+</html>

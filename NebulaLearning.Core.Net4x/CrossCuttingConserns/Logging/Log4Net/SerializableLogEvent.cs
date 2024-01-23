@@ -1,9 +1,10 @@
 ﻿using log4net.Core;
+using PostSharp.Serialization;
 using System;
 
 namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net
 {
-    [Serializable]// HACK: kullanım riski olabilir
+    [PSerializable]// HACK: kullanım riski olabilir
     public class SerializableLogEvent
     { 
         LoggingEvent _loggingEvent;
