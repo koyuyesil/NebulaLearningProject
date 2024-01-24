@@ -27,7 +27,7 @@ namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Security.Web
             {
                 stringBuilder.Append(roles[i]).Append(",");
             }
-            stringBuilder.Remove(stringBuilder.Length, 1).Append("|"); ;//length-1 olabilir
+            stringBuilder.Remove(stringBuilder.Length-1, 1).Append("|"); ;//length-1 olabilir
 
             stringBuilder.Append(firstName).Append("|");
             stringBuilder.Append(lastName).Append("|");

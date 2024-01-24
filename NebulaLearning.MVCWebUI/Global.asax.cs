@@ -35,7 +35,7 @@ namespace NebulaLearning.MVCWebUI
             {
                 // default auth cookie varmý baklýr. ".ASPXAUTH"
                 var authCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
-                if (authCookie != null)
+                if (authCookie == null)
                 {
                     return;
                 }
