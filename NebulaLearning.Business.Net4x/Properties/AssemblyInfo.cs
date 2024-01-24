@@ -1,7 +1,7 @@
 ﻿using NebulaLearning.Core.Net4x.Aspects.PostSharp.LogAspects;
+using NebulaLearning.Core.Net4x.Aspects.PostSharp.PerformanceAspect;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net.Loggers;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Bir bütünleştirilmiş koda ilişkin Genel Bilgiler aşağıdaki öznitelikler kümesiyle
@@ -16,9 +16,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 // Aspecte parametre olarak namespace yazılırsa o namespace daki tüm sınıflar loglanır.
-[assembly: LogAspect(typeof(DatabaseLogger),AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
-[assembly: LogAspect(typeof(FileLogger),AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
-
+[assembly: LogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
+[assembly: LogAspect(typeof(FileLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
+[assembly: LogExceptionAspect(typeof(DatabaseLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
+[assembly: LogExceptionAspect(typeof(FileLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
+//burada verilen performans parametresi tüm methodlara aynı verilmiştir dilenirse aspect methoda özel eklenebilir. her iksi de çalışacaktır.
+[assembly: PerformanceCounterAspect(2, AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
 // COM bileşenleri için görünmez yapar. Bu bütünleştirilmiş koddaki bir türe
 // erişmeniz gerekirse ComVisible özniteliğini o türde true olarak ayarlayın.

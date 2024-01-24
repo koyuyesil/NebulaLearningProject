@@ -33,18 +33,18 @@ namespace NebulaLearning.MVCWebUI.Controllers
                 new Exam
             {
                 ExamCategoryId = 1,
-                ExamName = "Coğrafya",
+                ExamName = "Bilgisayar",
                 ExamDuration = 30,
-                ExamDescription = "Coğrafya 1. Sınav",
-                ExamResult = 5
+                ExamDescription = "Sınav Açıklaması",
+                ExamResult = 1
             }, new Exam
             {
                 ExamId = 1,
-                ExamCategoryId = 4,
-                ExamName = "Coğrafya",
+                ExamCategoryId = 8,
+                ExamName = "Data Science",
                 ExamDuration = 30,
-                ExamDescription = "Coğrafya 1. Sınav",
-                ExamResult = 5
+                ExamDescription = "Sınav Açıklaması",
+                ExamResult = 1
             });
             return "Added";
         }
