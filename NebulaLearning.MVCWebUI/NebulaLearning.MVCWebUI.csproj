@@ -132,6 +132,10 @@
       <Project>{18366511-2312-48F0-A0AF-C15D5DF3F7CF}</Project>
       <Name>NebulaLearning.Business.Net4x</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NebulaLearning.Core.Net4x\NebulaLearning.Core.Net4x.csproj">
+      <Project>{79764771-1481-437B-B2BC-E17EBE6426F9}</Project>
+      <Name>NebulaLearning.Core.Net4x</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NebulaLearning.Entities.Net4x\NebulaLearning.Entities.Net4x.csproj">
       <Project>{F7C93F33-FFE0-40E7-8697-052604F55FB5}</Project>
       <Name>NebulaLearning.Entities.Net4x</Name>

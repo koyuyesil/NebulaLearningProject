@@ -1,11 +1,13 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.ValidationRules.FluentValidation;
+using NebulaLearning.Core.Net4x.Aspects.PostSharp.AuthorizationAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.TransactionAspect;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft;
 using NebulaLearning.DataAccess.Net4x.Abstract;
 using NebulaLearning.Entities.Net4x.Concrete;
+using PostSharp.Aspects.Dependencies;
 using System.Collections.Generic;
 using System.Transactions;
 
@@ -25,7 +27,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         // postsharp ücretli bir liblary
         // aspect isimlerini biz giriyoruz.
         [FluentValidationAspect(typeof(ExamValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]// minute parametre alabilir [CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]//[CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]
         public Exam AddExam(Exam exam)
         {
             return _examDal.Add(exam);
@@ -37,7 +39,8 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
             return _examDal.Get(e => e.ExamId == id);
         }
 
-        [CacheAspect(typeof(MemoryCacheManager),60)]// minute parametre alabilir 
+        [CacheAspect(typeof(MemoryCacheManager))]
+        [SecuredOperation(Roles="Admin,Editor")]
         public List<Exam> GetExamList()
         {
             return _examDal.GetList();
