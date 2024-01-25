@@ -13,19 +13,17 @@ using System.Transactions;
 
 namespace NebulaLearning.Business.Net4x.Concrete.Managers
 {
-    //log aspect burdan silinip assembly seviyesine taşındı AssemblyInfo.cs
+    // LogAspect Class yada Method üstü yerine assembly seviyesine (AssemblyInfo.cs) expression ile taşındı.
     public class ExamManager : IExamService
     {
         private IExamDal _examDal;
 
-        public ExamManager(IExamDal examDal) // 54.3 QUERYABLE REPOSTORY BURADA PARAMETRE OLARAK IMPLEMENTE EDİLEBİLİR.
+        public ExamManager(IExamDal examDal) // TODO : Konu 54.3 Queryable Repository burada parametre olarak implemente edilebilir.
         {
             _examDal = examDal;
         }
 
-        // BU Tür vadidationlar istemci tarafında da  otomatik arayüze uygulanabiliyor.
-        // postsharp ücretli bir liblary
-        // aspect isimlerini biz giriyoruz.
+        // Dip Not: Bu tarz validation işlemleri, istemci tarafında da otomatik arayüze uygulanabiliyor.
         [FluentValidationAspect(typeof(ExamValidator))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]//[CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]
         [SecuredOperation(Roles = "Admin,Editor")]
@@ -41,7 +39,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles="Admin,Editor")]
+        [SecuredOperation(Roles="Admin,Editor,Student")]
         public List<Exam> GetExamList()
         {
             return _examDal.GetList();
@@ -52,11 +50,8 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         public void TransactionalOperation(Exam toInsertExam, Exam toUpdateExam)
         {
             _examDal.Add(toInsertExam);
-            //bussines codes
+            // bussines codes
             _examDal.Update(toUpdateExam);
-            // burada a ve b başarılı ise ok değilse error vermesi gerekmez mi
-            // method aspect tarafından dispose edilse bile veritabanına kayıt olmaz mı?
-
         }
 
         public void TransactionalOperationDirtyCode(Exam toInsertExam, Exam toUpdateExam)
@@ -66,10 +61,10 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
                 try
                 {
                     _examDal.Add(toInsertExam);
-                    //bussines codes
+                    // bussines codes
                     _examDal.Update(toUpdateExam);
                     scope.Complete();
-                    // bu yöntemin bir iyisi Action method kullanmak kirli kod örneği
+                    // kirli kod örneği bunun yerine action method kullanılabilirdi ama aspect daha iyi seçenek
                 }
                 catch
                 {

@@ -4,7 +4,7 @@ using System;
 
 namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net
 {
-    [PSerializable]// HACK: kullanım riski olabilir
+    [PSerializable]
     public class SerializableLogEvent
     { 
         LoggingEvent _loggingEvent;

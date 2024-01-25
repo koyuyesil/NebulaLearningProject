@@ -14,7 +14,7 @@ namespace NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects
         private int _cacheByMinute;
         private ICacheManager _cacheManager;
 
-        public CacheAspect(Type type, int cacheByMinute=60)//default 60  minute
+        public CacheAspect(Type type, int cacheByMinute=60) // default 60 minute ayarlandı
         {
             _type = type;
             _cacheByMinute = cacheByMinute;
@@ -30,7 +30,7 @@ namespace NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects
         }
         public override void OnInvoke(MethodInterceptionArgs args)
         {
-            // method için key oluşturuldu.
+            // Method için key oluşturuldu.
             var methodName = string.Format("{0}.{1}.{2}",
                 args.Method.ReflectedType.Namespace,
                 args.Method.ReflectedType.Name,

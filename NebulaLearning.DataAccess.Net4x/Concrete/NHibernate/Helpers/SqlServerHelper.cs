@@ -10,9 +10,10 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.NHibernate.Helpers
     {
         public override ISessionFactory InitializeFactory()
         {
-            // TODO burda string hatalı olabilir string nereden geliyor bak. Not:Evet haklı çıktım aşağıda yorumu oku.
+            // TODO : Burda string hatalı olabilir string nereden geliyor bak.
+            // TODO : Evet haklı çıktım aşağıda yorumu oku.
             return Fluently.Configure().Database(MsSqlConfiguration.MsSql2012
-                //.ConnectionString(c => c.FromConnectionStringWithKey("NebulaLearning")))//App.Config'den gelir.
+                // TODO : .ConnectionString(c => c.FromConnectionStringWithKey("NebulaLearning")))//App.Config'den gelir.
                 .ConnectionString("Data Source=(localdb)\\MSSQLLocalDB; initial catalog=LearningDatabase;Integrated Security=True;Connect Timeout=30"))
                 .Mappings(t => t.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()))
                 .BuildSessionFactory();

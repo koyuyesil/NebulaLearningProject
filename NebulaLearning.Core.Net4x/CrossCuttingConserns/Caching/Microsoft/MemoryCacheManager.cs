@@ -9,7 +9,7 @@ namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft
     {
 
 
-        public ObjectCache Cache => MemoryCache.Default;//Cache Prop. Expression Body 
+        public ObjectCache Cache => MemoryCache.Default; // Cache Prop. Expression Body 
 
         public void Add(string key, object data, int cacheTime)
         {

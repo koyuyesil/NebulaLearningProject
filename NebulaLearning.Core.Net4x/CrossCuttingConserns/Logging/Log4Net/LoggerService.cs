@@ -16,35 +16,35 @@ namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Logging.Log4Net
         public bool IsErrorEnabled() => _log.IsErrorEnabled;
         public void Info(object logMessage)
         {
-            if (IsInfoEnabled()) //property yerine method olarak ele aldı anlamadım intellisense 
+            if (IsInfoEnabled()) 
             {
                 _log.Info(logMessage);
             }
         }
         public void Debug(object logMessage)
         {
-            if (IsDebugEnabled()) //property yerine method olarak ele aldı anlamadım intellisense 
+            if (IsDebugEnabled())
             {
                 _log.Debug(logMessage);
             }
         }
         public void Warn(object logMessage)
         {
-            if (IsWarnEnabled()) //property yerine method olarak ele aldı anlamadım intellisense 
+            if (IsWarnEnabled())
             {
                 _log.Warn(logMessage);
             }
         }
         public void Fatal(object logMessage)
         {
-            if (IsFatalEnabled()) //property yerine method olarak ele aldı anlamadım intellisense 
+            if (IsFatalEnabled()) 
             {
                 _log.Fatal(logMessage);
             }
         }
         public void Error(object logMessage)
         {
-            if (IsErrorEnabled()) //property yerine method olarak ele aldı anlamadım intellisense 
+            if (IsErrorEnabled()) 
             {
                 _log.Error(logMessage);
             }

@@ -23,7 +23,6 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.NHibernate
                              join c in session.Query<ExamCategory>() on p.ExamCategoryId equals c.ExamCategoryId
                              select new ExamDetail
                              {
-                                 // burada kaldık database de sınavlar bölümünde kategori Id yok ekle
                                  ExamId = p.ExamCategoryId,
                                  ExamName = p.ExamName,
                                  CategoryName = c.ExamCategoryName

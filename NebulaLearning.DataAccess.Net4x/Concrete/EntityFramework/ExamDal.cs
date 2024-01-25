@@ -17,7 +17,6 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework
                              join c in contex.ExamCategories on p.ExamCategoryId equals c.ExamCategoryId
                              select new ExamDetail
                              {
-                                 // burada kaldık database de sınavlar bölümünde kategori Id yok ekle
                                  ExamId = p.ExamCategoryId,
                                  ExamName = p.ExamName,
                                  CategoryName = c.ExamCategoryName

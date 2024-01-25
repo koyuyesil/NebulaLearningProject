@@ -51,9 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComplexTypes\ExamDetail.cs" />
+    <Compile Include="ComplexTypes\UserRoleItem.cs" />
+    <Compile Include="Concrete\Role.cs" />
     <Compile Include="Concrete\Exam.cs" />
     <Compile Include="Concrete\ExamCategory.cs" />
     <Compile Include="Concrete\User.cs" />
+    <Compile Include="Concrete\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

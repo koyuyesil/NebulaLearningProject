@@ -5,7 +5,7 @@ using NebulaLearning.Entities.Net4x.Concrete;
 
 namespace NebulaLearning.Business.Net4x.ValidationRules.FluentValidation
 {
-    //burada namespace IEntity den dolayı Core katmanının da implementasyonunu gerektirir unutma hata verir
+    // Burada namespace IEntity den dolayı Core katmanının da implementasyonunu gerektirir unutma hata verir
     public class ExamValidator : AbstractValidator<Exam>
     {
         public ExamValidator()
@@ -16,11 +16,11 @@ namespace NebulaLearning.Business.Net4x.ValidationRules.FluentValidation
             RuleFor(e => e.ExamDuration).NotEmpty().WithMessage("Boş olamaz!");
             RuleFor(e => e.ExamResult).NotEmpty().WithMessage("Boş olamaz!");
             RuleFor(e => e.ExamResult).NotEmpty().WithMessage("Boş olamaz!");
-            //RuleFor(e => e.ExamResult).NotEmpty().Must(MustTrue);// OLMALI METHODU İLE
+            //RuleFor(e => e.ExamResult).NotEmpty().Must(MustTrue); // MustTrue() methodu ile kullanım.
 
 
         }
-        // OLMALI METHODU
+        // MustTrue() methodu
         private bool MustTrue(int arg)
         {
             return true;

@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: LogAspect(typeof(FileLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
 [assembly: LogExceptionAspect(typeof(DatabaseLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
 [assembly: LogExceptionAspect(typeof(FileLogger), AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
-//burada verilen performans parametresi tüm methodlara aynı verilmiştir dilenirse aspect methoda özel eklenebilir. her iksi de çalışacaktır.
+// Burada verilen performans parametresi tüm methodlara aynı verilmiştir dilenirse aspect methoda özel eklenebilir. her iksi de çalışacaktır.
 [assembly: PerformanceCounterAspect(2, AttributeTargetTypes = "NebulaLearning.Business.Net4x.Concrete.Managers.*")]
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
 // COM bileşenleri için görünmez yapar. Bu bütünleştirilmiş koddaki bir türe

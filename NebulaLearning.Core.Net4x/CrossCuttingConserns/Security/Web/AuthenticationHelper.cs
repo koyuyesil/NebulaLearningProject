@@ -15,7 +15,7 @@ namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Security.Web
             var authTicket = new FormsAuthenticationTicket(1, userName, DateTime.Now, expiration, rememberMe, CreateAuthText(email, roles, firstName, lastName, id));
             string encTicket = FormsAuthentication.Encrypt(authTicket);
             HttpContext.Current.Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
-            //FormsAuthentication.FormsCookieName ASP.NET STANDART AUTH COOKIE İSMİ ZORUNLU DEĞİL
+            //FormsAuthentication.FormsCookieName ASP.NET Standart auth cookie ismini döndürür.
         }
 
         private static string CreateAuthText(string email, string[] roles, string firstName, string lastName, Guid id)
@@ -27,7 +27,7 @@ namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Security.Web
             {
                 stringBuilder.Append(roles[i]).Append(",");
             }
-            stringBuilder.Remove(stringBuilder.Length-1, 1).Append("|"); ;//length-1 olabilir
+            stringBuilder.Remove(stringBuilder.Length-1, 1).Append("|");
 
             stringBuilder.Append(firstName).Append("|");
             stringBuilder.Append(lastName).Append("|");

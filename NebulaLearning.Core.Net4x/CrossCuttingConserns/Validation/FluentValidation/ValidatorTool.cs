@@ -4,13 +4,13 @@ namespace NebulaLearning.Core.Net4x.CrossCuttingConserns.Validation.FluentValida
 {
     public class ValidatorTool
     {
-        public static void FluentValidate(IValidator validator, object entity) // HACK Açık tür dönüşümü yapıldı kontrol gerekli
+        public static void FluentValidate(IValidator validator, object entity)
         {
-            var context = new ValidationContext<object>(entity);// bu şekilde güncellendi son sürüm
+            var context = new ValidationContext<object>(entity);
             var result = validator.Validate(context);
             if (result.Errors.Count>0)
             {
-                throw new ValidationException(result.Errors);//Fluent validationdan gelmeli dikkat edelim
+                throw new ValidationException(result.Errors); // (FluentValidation.ValidationException)
             }
         }
     }
