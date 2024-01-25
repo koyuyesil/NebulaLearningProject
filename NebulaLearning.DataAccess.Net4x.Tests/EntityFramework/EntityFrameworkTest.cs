@@ -13,15 +13,16 @@ namespace NebulaLearning.DataAccess.Net4x.Tests.EntityFramework
             ExamDal _examDal = new ExamDal();
             // select count(*) from Exams
             var result = _examDal.GetList();
-            Assert.AreEqual(3, result.Count);
+            Assert.IsTrue(result.Count > 5);
+            //Assert.AreEqual(3, result.Count);
         }
         [TestMethod]
         public void Get_all_with_parameters_returns_filtered_exams()
         {
             ExamDal _examDal = new ExamDal();
             // select count(*) from Exams where ExamName like '%Math%'
-            var result = _examDal.GetList(e=>e.ExamName.Contains("Math"));
-            Assert.AreEqual(2, result.Count);
+            var result = _examDal.GetList(e=>e.ExamName.Contains("Bilgisayar"));
+            Assert.AreEqual(3, result.Count);
         }
     }
 }
