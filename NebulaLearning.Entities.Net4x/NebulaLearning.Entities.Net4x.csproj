@@ -53,6 +53,7 @@
     <Compile Include="ComplexTypes\ExamDetail.cs" />
     <Compile Include="Concrete\Exam.cs" />
     <Compile Include="Concrete\ExamCategory.cs" />
+    <Compile Include="Concrete\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

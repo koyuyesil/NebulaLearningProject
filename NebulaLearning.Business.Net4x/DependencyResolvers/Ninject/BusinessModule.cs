@@ -1,23 +1,7 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.Concrete.Managers;
 using NebulaLearning.Core.Net4x.DataAccess;
-// Depencency Injection
-// Class isimleri aynı olduğu için namespace seçilecek.
-
-// DataAccess Queryable yöntemini EF NH gibi buradan değiştir.
-using NebulaLearning.Core.Net4x.DataAccess.EntityFramework;
-using NebulaLearning.Core.Net4x.DataAccess.NHibernate;
-
-//using NebulaLearning.Core.Net4x.DataAccess.NHibernate;
-
 using NebulaLearning.DataAccess.Net4x.Abstract;
-
-// DataAccess yöntemini EF NH gibi buradan değiştir.
-using NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework;
-using NebulaLearning.DataAccess.Net4x.Concrete.NHibernate.Helpers;
-
-//using NebulaLearning.DataAccess.Net4x.Concrete.NHibernate;
-
 using Ninject.Modules;
 using System.Data.Entity;
 
@@ -27,17 +11,19 @@ namespace NebulaLearning.Business.Net4x.DependencyResolvers.Ninject
     {
         public override void Load()
         {
-            // VARLIK BAZLI OLANLAR
+            // Depencency Injection
+            // Class isimleri aynı olduğu için namespace seçilecek.
             Bind<IExamService>().To<ExamManager>().InSingletonScope();
-            Bind<IExamDal>().To<ExamDal>();  // EF ve NH Class isimleri aynı
+            Bind<IExamDal>().To<DataAccess.Net4x.Concrete.EntityFramework.ExamDal>().InSingletonScope();
+            Bind<IUserService>().To<UserManager>().InSingletonScope();
+            Bind<IUserDal>().To<DataAccess.Net4x.Concrete.EntityFramework.UserDal>().InSingletonScope();  
 
 
-
-            // STANDART OLANLAR
-            // EF ve NH Class isimleri aynı olduğundan namespace ismiyle de yazabilirsin
+            // Standart Olanlar
             Bind(typeof(IQueryableRepository<>)).To(typeof(Core.Net4x.DataAccess.EntityFramework.QueryableRepository<>));
-            Bind<DbContext>().To<DatabaseContex>();
-            Bind<NHibernateHelper>().To<SqlServerHelper>();
+            Bind<DbContext>().To<DataAccess.Net4x.Concrete.EntityFramework.DatabaseContex>();
+            // Sadece NHibernate için
+            Bind<Core.Net4x.DataAccess.NHibernate.NHibernateHelper>().To<DataAccess.Net4x.Concrete.NHibernate.Helpers.SqlServerHelper>();
 
             
         }

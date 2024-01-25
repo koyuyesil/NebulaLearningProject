@@ -19,12 +19,8 @@ namespace NebulaLearning.Core.Net4x.Aspects.PostSharp.AuthorizationAspects
                 {
                     isAuthorized = true;
                 }
-                else
-                {
-                    throw new SecurityException("You're not authorized!");
-                }
             }
-
+            if (!isAuthorized) { throw new SecurityException("You're not authorized!"); }
         }
     }
 }

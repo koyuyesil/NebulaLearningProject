@@ -28,6 +28,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         // aspect isimlerini biz giriyoruz.
         [FluentValidationAspect(typeof(ExamValidator))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]//[CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]
+        [SecuredOperation(Roles = "Admin,Editor")]
         public Exam AddExam(Exam exam)
         {
             return _examDal.Add(exam);

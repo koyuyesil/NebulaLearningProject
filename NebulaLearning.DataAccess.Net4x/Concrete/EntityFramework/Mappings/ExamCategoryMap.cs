@@ -11,7 +11,6 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework.Mappings
             HasKey(x => x.ExamCategoryId);
             Property(x => x.ExamCategoryId).HasColumnName("ExamCategoryId");
             Property(x => x.ExamCategoryName).HasColumnName("ExamCategoryName");
-
         }
     }
 }
