@@ -25,5 +25,6 @@ namespace NebulaLearning.WebAPI.Controllers
 
         // HATA 1 : <ExceptionMessage>'ExamsController' türünde bir denetleyici oluşturmaya çalışırken hata oluştu. Denetleyicinin parametresiz ortak bir oluşturucusu olduğundan emin olun.
         // ÇÖZÜM 1 : WebApiContrib.IoC.Ninject ve Ninject.MVC5 paketi yüklenir. Bağımlılık olarak gelen Ninject sürümü de yerel sürümlerle aynı olmalıdır. An itibari ile PostSharp hariç güncel.
+        // ÇÖZÜM 2 : NinjectWebCommon.cs dosyasına Binding yapılır
     }
 }

@@ -1,14 +1,16 @@
-﻿using NebulaLearning.Business.Net4x.Abstract;
+﻿using AutoMapper;
+using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.ValidationRules.FluentValidation;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.AuthorizationAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.TransactionAspect;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft;
+using NebulaLearning.Core.Net4x.Utilities.Mappings;
 using NebulaLearning.DataAccess.Net4x.Abstract;
 using NebulaLearning.Entities.Net4x.Concrete;
-using PostSharp.Aspects.Dependencies;
 using System.Collections.Generic;
+using System.Linq;
 using System.Transactions;
 
 namespace NebulaLearning.Business.Net4x.Concrete.Managers
@@ -17,10 +19,13 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
     public class ExamManager : IExamService
     {
         private IExamDal _examDal;
+        private readonly IMapper _mapper;
 
-        public ExamManager(IExamDal examDal) // TODO : Konu 54.3 Queryable Repository burada parametre olarak implemente edilebilir.
+        // TODO : AUTOMAPPER STEP 7 :
+        public ExamManager(IExamDal examDal, IMapper mapper) // TODO : Konu 54.3 Queryable Repository burada parametre olarak implemente edilebilir.
         {
             _examDal = examDal;
+            _mapper = mapper;
         }
 
         // Dip Not: Bu tarz validation işlemleri, istemci tarafında da otomatik arayüze uygulanabiliyor.
@@ -32,17 +37,31 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
             return _examDal.Add(exam);
         }
 
-        
         public Exam GetExamById(int id)
         {
             return _examDal.Get(e => e.ExamId == id);
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles="Admin,Editor,Student")]
+        //[SecuredOperation(Roles="Admin,Editor,Student")]
         public List<Exam> GetExamList()
         {
-            return _examDal.GetList();
+            // TODO : WEB API STEP 6 : EntityFramework Serileştirme hatası Select Operasyonu ile çözülür.
+            //return _examDal.GetList().Select(p => new Exam
+            //{
+            //    ExamCategoryId = p.ExamCategoryId,
+            //    ExamDescription = p.ExamDescription,
+            //    ExamDuration = p.ExamDuration,
+            //    ExamId = p.ExamId,
+            //    ExamName = p.ExamName,
+            //    ExamResult = p.ExamResult
+            //}).ToList();
+            // TODO : WEB API STEP 7 : Uzun kullanım yerine automapper 6.2.2 sürüm çalışan. kullanacağız alternatifi mapster
+            // TODO : AUTOMAPPER STEP 1 :
+            // return AutoMapperHelper.MapToSameTypeList(_examDal.GetList());
+            // TODO : AUTOMAPPER STEP 8 :
+            return _mapper.Map<List<Exam>>(_examDal.GetList()); 
+
         }
 
         [TransactionScopeAspect]
@@ -73,7 +92,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
             }
         }
 
-        
+
 
         [FluentValidationAspect(typeof(ExamValidator))]
         public Exam UpdateExam(Exam exam)

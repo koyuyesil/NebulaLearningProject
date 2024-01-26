@@ -13,9 +13,9 @@ namespace NebulaLearning.MVCWebUI.Utilities.Mvc.InfraStructure
     {
         IKernel _kernel;
 
-        public NinectControllerFactory(INinjectModule module)
+        public NinectControllerFactory(params INinjectModule[] modules) // converted params for automapper modules and next modules
         {
-            _kernel = new StandardKernel(module);
+            _kernel = new StandardKernel(modules);
         }
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)

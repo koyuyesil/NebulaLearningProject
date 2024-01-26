@@ -5,12 +5,13 @@ namespace NebulaLearning.WebAPI.App_Start
 {
     using System;
     using System.Web;
-
+    using System.Web.Http;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
+    using NebulaLearning.Business.Net4x.DependencyResolvers.Ninject;
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
+    using WebApiContrib.IoC.Ninject;
 
     public static class NinjectWebCommon 
     {
@@ -45,6 +46,10 @@ namespace NebulaLearning.WebAPI.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+
+                // TODO : WEB API STEP 5 :
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
+
                 RegisterServices(kernel);
                 return kernel;
             }
@@ -61,6 +66,9 @@ namespace NebulaLearning.WebAPI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            // TODO : WEB API STEP 4 : Binding yerine load yapýlýr.
+            kernel.Load(new BusinessModule(), new AutoMapperModule()); // TODO : AUTOMAPPER STEP 6 :
+            // kernel.Load(new AutoMapperModule());
         }
     }
 }

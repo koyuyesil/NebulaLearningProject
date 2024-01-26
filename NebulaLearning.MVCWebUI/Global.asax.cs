@@ -19,8 +19,8 @@ namespace NebulaLearning.MVCWebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
-            ControllerBuilder.Current.SetControllerFactory(new NinectControllerFactory(new BusinessModule()));
+            // BusinessModule Eneksiyonu
+            ControllerBuilder.Current.SetControllerFactory(new NinectControllerFactory(new BusinessModule(), new AutoMapperModule())); // TODO : AUTOMAPPER STEP 9 :
         }
         // cerez eventinin ayarlanmasý
         public override void Init()
