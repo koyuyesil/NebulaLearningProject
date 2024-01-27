@@ -43,7 +43,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles="Admin,Editor")]
+        //[SecuredOperation(Roles="Admin,Editor")]
         public List<Exam> GetExamList()
         {
             // TODO : WEB API STEP 6 : EntityFramework Serileştirme hatası Select Operasyonu ile çözülür.
@@ -73,26 +73,24 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
             _examDal.Update(toUpdateExam);
         }
 
-        public void TransactionalOperationDirtyCode(Exam toInsertExam, Exam toUpdateExam)
-        {
-            using (TransactionScope scope = new TransactionScope())
-            {
-                try
-                {
-                    _examDal.Add(toInsertExam);
-                    // bussines codes
-                    _examDal.Update(toUpdateExam);
-                    scope.Complete();
-                    // kirli kod örneği bunun yerine action method kullanılabilirdi ama aspect daha iyi seçenek
-                }
-                catch
-                {
-                    scope.Dispose();
-                }
-            }
-        }
-
-
+        //public void TransactionalOperationDirtyCode(Exam toInsertExam, Exam toUpdateExam)
+        //{
+        //    using (TransactionScope scope = new TransactionScope())
+        //    {
+        //        try
+        //        {
+        //            _examDal.Add(toInsertExam);
+        //            // bussines codes
+        //            _examDal.Update(toUpdateExam);
+        //            scope.Complete();
+        //            // kirli kod örneği bunun yerine action method kullanılabilirdi ama aspect daha iyi seçenek
+        //        }
+        //        catch
+        //        {
+        //            scope.Dispose();
+        //        }
+        //    }
+        //}
 
         [FluentValidationAspect(typeof(ExamValidator))]
         public Exam UpdateExam(Exam exam)

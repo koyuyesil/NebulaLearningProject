@@ -36,6 +36,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NebulaLearning.WCFServiceApp", "NebulaLearning.WCFServiceApp\", "{1B3D80F0-05E9-42A4-A68C-3C893933A992}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{18366511-2312-48f0-a0af-c15d5df3f7cf}|NebulaLearning.Business.Net4x.dll;{79764771-1481-437B-B2BC-E17EBE6426F9}|NebulaLearning.Core.Net4x.dll;{A1E92578-8AD8-4821-AD1B-1E393C5D1F5F}|NebulaLearning.DataAccess.Net4x.dll;{F7C93F33-FFE0-40E7-8697-052604F55FB5}|NebulaLearning.Entities.Net4x.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50974"
 		Debug.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFServiceApp\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50974\"
