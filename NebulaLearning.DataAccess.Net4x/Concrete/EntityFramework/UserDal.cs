@@ -23,7 +23,8 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework
                              on ur.UserId equals user.Id
                              where ur.UserId == user.Id
                              select new UserRoleItem { RoleName = r.Name };
-                return result.ToList();
+                var roleitems= result.ToList();
+                return roleitems;//yanlış tüm roller geliyor
             }
         }
     }

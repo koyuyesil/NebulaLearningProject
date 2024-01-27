@@ -20,6 +20,7 @@ namespace NebulaLearning.MVCWebUI.Controllers
         public string Login(string username, string password)
         {
             var user = _userService.GetUserByUserNameAndPassword(username, password);
+            var roles = _userService.GetUserRoles(user).Select(u => u.RoleName).ToArray();
             if (user != null)
             {
                 AuthenticationHelper.CreateAuthCookie(
@@ -27,7 +28,7 @@ namespace NebulaLearning.MVCWebUI.Controllers
                     user.UserName,
                     user.Email,
                     DateTime.Now.AddDays(15),
-                    _userService.GetUserRoles(user).Select(u => u.RoleName).ToArray(),
+                    roles,
                     false,
                     user.FirstName,
                     user.LastName);
