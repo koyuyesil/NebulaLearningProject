@@ -43,7 +43,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        //[SecuredOperation(Roles="Admin,Editor")]
+        [SecuredOperation(Roles="Admin,Editor")]
         public List<Exam> GetExamList()
         {
             // TODO : WEB API STEP 6 : EntityFramework Serileştirme hatası Select Operasyonu ile çözülür.
