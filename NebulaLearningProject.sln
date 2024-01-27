@@ -29,30 +29,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NebulaLearning.DataAccess.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.WebAPI", "NebulaLearning.WebAPI\NebulaLearning.WebAPI.csproj", "{A75B6C59-09F4-41C1-B623-D1D243382CD0}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NebulaLearning.WCFService", "NebulaLearning.WCFService\", "{D0E810DD-99ED-4660-94BA-F56B72E3E870}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI", "NebulaLearning.MVCWebUI\NebulaLearning.MVCWebUI.csproj", "{66B3B28C-029C-4902-80DF-B330A4803163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI.Tests", "NebulaLearning.MVCWebUI.Tests\NebulaLearning.MVCWebUI.Tests.csproj", "{DF592462-C820-4C0F-B9F4-EB43613694FB}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NebulaLearning.WCFServiceApp", "NebulaLearning.WCFServiceApp\", "{1B3D80F0-05E9-42A4-A68C-3C893933A992}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_53414"
-		Debug.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFService\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53414\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50974"
+		Debug.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFServiceApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50974\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_53414"
-		Release.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFService\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53414\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50974"
+		Release.AspNetCompiler.PhysicalPath = "NebulaLearning.WCFServiceApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50974\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "53414"
-		SlnRelativePath = "NebulaLearning.WCFService\"
+		VWDPort = "50974"
+		SlnRelativePath = "NebulaLearning.WCFServiceApp\"
+		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI", "NebulaLearning.MVCWebUI\NebulaLearning.MVCWebUI.csproj", "{66B3B28C-029C-4902-80DF-B330A4803163}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NebulaLearning.MVCWebUI.Tests", "NebulaLearning.MVCWebUI.Tests\NebulaLearning.MVCWebUI.Tests.csproj", "{DF592462-C820-4C0F-B9F4-EB43613694FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,10 +113,6 @@ Global
 		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A75B6C59-09F4-41C1-B623-D1D243382CD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0E810DD-99ED-4660-94BA-F56B72E3E870}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{66B3B28C-029C-4902-80DF-B330A4803163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66B3B28C-029C-4902-80DF-B330A4803163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66B3B28C-029C-4902-80DF-B330A4803163}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -124,6 +121,10 @@ Global
 		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF592462-C820-4C0F-B9F4-EB43613694FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3D80F0-05E9-42A4-A68C-3C893933A992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3D80F0-05E9-42A4-A68C-3C893933A992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3D80F0-05E9-42A4-A68C-3C893933A992}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3D80F0-05E9-42A4-A68C-3C893933A992}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
