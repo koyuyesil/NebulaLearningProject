@@ -190,6 +190,7 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ChoicesController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\ExplanationsController.cs" />

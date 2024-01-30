@@ -22,8 +22,7 @@ namespace NebulaLearning.Business.Net4x.DependencyResolvers.Ninject
             Bind<IChoiceDal>().To<DataAccess.Net4x.Concrete.EntityFramework.ChoiceDal>().InSingletonScope();
             Bind<IExplanationService>().To<ExplanationManager>().InSingletonScope();
             Bind<IExplanationDal>().To<DataAccess.Net4x.Concrete.EntityFramework.ExplanationDal>().InSingletonScope();
-
-            //Bind<IQuestionService>().To<QuestionManager>().InSingletonScope();
+            Bind<IQuestionService>().To<QuestionManager>().InSingletonScope();
             Bind<IQuestionDal>().To<DataAccess.Net4x.Concrete.EntityFramework.QuestionDal>().InSingletonScope();
 
             // Standart Olanlar

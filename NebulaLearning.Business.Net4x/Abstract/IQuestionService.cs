@@ -9,12 +9,12 @@ namespace NebulaLearning.Business.Net4x.Abstract
 
         Question Update(Question question);
 
-        Question Delete(Choice choice);
+        Question Delete(Question question);
 
         Question GetById(int id);
 
         List<Question> GetList();
 
-        List<Question> GetByCategoryId();
+        List<Question> GetByCategoryId(int id);
     }
 }

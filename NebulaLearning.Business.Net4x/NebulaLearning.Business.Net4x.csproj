@@ -104,6 +104,7 @@
     <Compile Include="Abstract\IQuestionService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\Managers\ChoiceManager.cs" />
+    <Compile Include="Concrete\Managers\QuestionManager.cs" />
     <Compile Include="Concrete\Managers\ExamManager.cs" />
     <Compile Include="Concrete\Managers\ExplanationManager.cs" />
     <Compile Include="Concrete\Managers\UserManager.cs" />
