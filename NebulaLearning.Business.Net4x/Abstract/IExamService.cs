@@ -5,17 +5,24 @@ using System.ServiceModel;
 namespace NebulaLearning.Business.Net4x.Abstract
 {
     [ServiceContract]
-    public interface IExamService
+    public interface IExamService // TODO : EKSİK
     {
         [OperationContract]
-        List<Exam> GetExamList();
+        Exam Add(Exam exam);
+
         [OperationContract]
-        Exam GetExamById(int id);
+        Exam Update(Exam exam);
+
         [OperationContract]
-        Exam AddExam(Exam exam);
+        Exam Delete(Exam exam);
+
         [OperationContract]
-        Exam UpdateExam(Exam exam);
+        Exam GetById(int id);
+
         [OperationContract]
-        void TransactionalOperation(Exam toInsertExam, Exam toUpdateExam);
+        List<Exam> GetList();
+
+        [OperationContract]
+        void TransactionalOperation(Exam toInsertExam, Exam toUpdateExam);//yukarıdakilere bağlı operasyon
     }
 }

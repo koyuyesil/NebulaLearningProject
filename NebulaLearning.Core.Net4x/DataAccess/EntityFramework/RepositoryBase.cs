@@ -28,11 +28,25 @@ namespace NebulaLearning.Core.Net4x.DataAccess.EntityFramework
             }
         }
 
-        public void Delete(TEntity entity)
+        public TEntity Update(TEntity entity)
+        {
+            using (var context = new TContext())
+            {
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
+                context.SaveChanges();
+                return entity;
+            }
+        }
+
+        public TEntity Delete(TEntity entity)
         {
             using (var context = new TContext())
             {
                 var deletedEntity = context.Entry(entity);
+                deletedEntity.State = EntityState.Deleted;
+                context.SaveChanges();
+                return entity;
             }
         }
 
@@ -51,17 +65,6 @@ namespace NebulaLearning.Core.Net4x.DataAccess.EntityFramework
                 return filter == null
                     ? context.Set<TEntity>().ToList()
                     : context.Set<TEntity>().Where(filter).ToList();
-            }
-        }
-
-        public TEntity Update(TEntity entity)
-        {
-            using (var context = new TContext())
-            {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
-                return entity;
             }
         }
     }

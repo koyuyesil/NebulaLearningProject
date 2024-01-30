@@ -52,6 +52,9 @@
   <ItemGroup>
     <Compile Include="ComplexTypes\ExamDetail.cs" />
     <Compile Include="ComplexTypes\UserRoleItem.cs" />
+    <Compile Include="Concrete\Explanation.cs" />
+    <Compile Include="Concrete\Choice.cs" />
+    <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\Role.cs" />
     <Compile Include="Concrete\Exam.cs" />
     <Compile Include="Concrete\ExamCategory.cs" />

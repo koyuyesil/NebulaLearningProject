@@ -2,7 +2,6 @@
 using NebulaLearning.Business.Net4x.DependencyResolvers.Ninject;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Principal;
@@ -32,8 +31,8 @@ namespace NebulaLearning.WebAPI.MessageHandlers
                     User user = userService.GetUserByUserNameAndPassword(tokenValues[0], tokenValues[1]);
                     if (user != null)
                     {
-                        IPrincipal principal = new GenericPrincipal(new GenericIdentity(tokenValues[0]),
-                            userService.GetUserRoles(user).Select(u => u.RoleName).ToArray());
+                        var roles = userService.GetUserRoles(user).Select(u => u.RoleName).ToArray();
+                        IPrincipal principal = new GenericPrincipal(new GenericIdentity(tokenValues[0]), roles);
                         Thread.CurrentPrincipal = principal; // APP
                         HttpContext.Current.User = principal; // TARAYICI
                     }

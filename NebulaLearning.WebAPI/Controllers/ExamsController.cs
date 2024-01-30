@@ -1,30 +1,57 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
+using NebulaLearning.Business.Net4x.DependencyResolvers.Ninject;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace NebulaLearning.WebAPI.Controllers
 {
+    [RoutePrefix("api/exams")]
     public class ExamsController : ApiController
     {
-        private IExamService _examService; // TODO : WEB API STEP 1 :
+        private IExamService examService = InstanceFactory.GetInstance<IExamService>();
 
-        public ExamsController(IExamService examService)
+        [AcceptVerbs("GET", "POST")]
+        [HttpGet]
+        [Route("add")]
+        public Exam Add()
         {
-            _examService = examService;  // TODO : WEB API STEP 2 :
+            return examService.Add(new Exam() { ExamName = "Yeni Sınav - " + DateTime.Now, ExamResult = 100, ExamDuration = 30, ExamDescription = "Açıklama", ExamCategoryId = 4 });
         }
 
-        public List<Exam> Get()
+        [AcceptVerbs("GET", "POST")]
+        [HttpGet]
+        [Route("update/{id}")]
+        public Exam Update(int id)
         {
-            return _examService.GetExamList(); // TODO : WEB API STEP 3 : Buradan itibaren 5 adet hata alınacaktır.
+            return examService.Update(new Exam() { ExamId = id, ExamName = "Güncellendi - " + DateTime.Now, ExamResult = 100, ExamDuration = 30, ExamDescription = "Açıklama", ExamCategoryId = 4 });
         }
 
-        // HATA 1 : <ExceptionMessage>'ExamsController' türünde bir denetleyici oluşturmaya çalışırken hata oluştu. Denetleyicinin parametresiz ortak bir oluşturucusu olduğundan emin olun.
-        // ÇÖZÜM 1 : WebApiContrib.IoC.Ninject ve Ninject.MVC5 paketi yüklenir. Bağımlılık olarak gelen Ninject sürümü de yerel sürümlerle aynı olmalıdır. An itibari ile PostSharp hariç güncel.
-        // ÇÖZÜM 2 : NinjectWebCommon.cs dosyasına Binding yapılır
+        [AcceptVerbs("GET", "POST")]
+        [HttpGet]
+        [Route("delete/{id}")]
+        public Exam Delete(int id)
+        {
+            return examService.Delete(new Exam() { ExamId = id });
+        }
+
+        [Route("get/{id}")]
+        public Exam Get(int id)
+        {
+            return examService.GetById(id);
+        }
+
+        public List<Exam> GetList()
+        {
+            return examService.GetList();
+        }
     }
 }
+// TODO : WEB API STEP 1 : Geçici constructor yapılır
+// TODO : WEB API STEP 2 : ExamManager oluşturulur gerekli parametreler InstanceFactoryde inekte edilir.
+// TODO : WEB API STEP 2 : Sonra burada servisden instance alınır.
+// TODO : WEB API STEP 3 : Buradan itibaren 5 adet hata alınacaktır.
+// HATA 1 : <ExceptionMessage>'ExamsController' türünde bir denetleyici oluşturmaya çalışırken hata oluştu. Denetleyicinin parametresiz ortak bir oluşturucusu olduğundan emin olun.
+// ÇÖZÜM 1 : WebApiContrib.IoC.Ninject ve Ninject.MVC5 paketi yüklenir. Bağımlılık olarak gelen Ninject sürümü de yerel sürümlerle aynı olmalıdır. An itibari ile PostSharp hariç güncel.
+// ÇÖZÜM 2 : NinjectWebCommon.cs dosyasına Binding yapılır

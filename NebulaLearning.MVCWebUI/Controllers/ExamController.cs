@@ -17,14 +17,14 @@ namespace NebulaLearning.MVCWebUI.Controllers
         {
             var model = new ExamListViewModel // generate new type-yeni tür oluşturdan hızlı yaplır
             {
-                Exams = _examService.GetExamList()
+                Exams = _examService.GetList()
             };
             return View(model);
             //return View(_examService.GetExamList()); DirtyCode
         }
         public string Add()
         {
-            _examService.AddExam(new Exam { ExamCategoryId = 1, ExamName = "Coğrafya", ExamDuration = 30, ExamDescription = "Coğrafya 1. Sınav", ExamResult = 5 });
+            _examService.Add(new Exam { ExamCategoryId = 1, ExamName = "Coğrafya", ExamDuration = 30, ExamDescription = "Coğrafya 1. Sınav", ExamResult = 5 });
             return "Added";
         }
         public string AddTransactional()

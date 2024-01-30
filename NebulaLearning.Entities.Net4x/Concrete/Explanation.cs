@@ -2,10 +2,10 @@
 
 namespace NebulaLearning.Entities.Net4x.Concrete
 {
-    // TODO Complex Type : Step 4
-    public class Role:IEntity
+    public class Explanation:IEntity
     {
         public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
+        public virtual string Content { get; set; }
+        public virtual int QuestionId { get; set; }
     }
 }

@@ -24,12 +24,13 @@ namespace NebulaLearning.Core.Net4x.DataAccess.NHibernate
             }
         }
 
-        public void Delete(TEntity entity)
+        public TEntity Delete(TEntity entity)
         {
             using (var session = _NHibernateHelper.OpenSession())
             {
                 session.Delete(entity);
             }
+            return entity;
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter)

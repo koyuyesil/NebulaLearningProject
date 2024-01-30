@@ -7,7 +7,6 @@ namespace NebulaLearning.DataAccess.Net4x.Abstract
 {
     public interface IExamDal:IEntityRepository<Exam>
     {
-        //First Complex Type here, buraya yazılan methodlar Concrete klasoundeki miras alanlar implemente eder.
         List<ExamDetail> GetExamDetailList();
     }
 }

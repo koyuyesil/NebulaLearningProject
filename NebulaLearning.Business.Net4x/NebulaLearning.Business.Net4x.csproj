@@ -98,9 +98,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IChoiceService.cs" />
     <Compile Include="Abstract\IExamService.cs" />
+    <Compile Include="Abstract\IExplanationService.cs" />
+    <Compile Include="Abstract\IQuestionService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\Managers\ChoiceManager.cs" />
     <Compile Include="Concrete\Managers\ExamManager.cs" />
+    <Compile Include="Concrete\Managers\ExplanationManager.cs" />
     <Compile Include="Concrete\Managers\UserManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\AutoMapperModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />

@@ -8,12 +8,6 @@ namespace NebulaLearning.Core.Net4x.DataAccess
     // Bu, T türündeki varlıkların new() ile örneklenebilecek sınıflardan olması gerektiğini belirtir.
     public interface IEntityRepository<T> where T : class, Entities.IEntity, new()
     {
-        // GetList metodu, belirli bir filtre koşuluna göre varlık listesini döndürür.
-        List<T> GetList(Expression<Func<T, bool>> filter = null);
-
-        // Get metodu, belirli bir filtre koşuluna göre tek bir varlığı döndürür.
-        T Get(Expression<Func<T, bool>> filter);
-
         // Add metodu, bir varlığı veritabanına ekler ve eklenen varlığı geri döndürür.
         T Add(T entity);
 
@@ -22,6 +16,12 @@ namespace NebulaLearning.Core.Net4x.DataAccess
 
         // Delete metodu, belirli bir varlığı veritabanından siler.
         // Entity olarak parametre alması, PK yada numerik olmayan girdileri silmek için kullanışlıdır.
-        void Delete(T entity);
+        T Delete(T entity);
+
+        // Get metodu, belirli bir filtre koşuluna göre tek bir varlığı döndürür.
+        T Get(Expression<Func<T, bool>> filter);
+
+        // GetList metodu, belirli bir filtre koşuluna göre varlık listesini döndürür.
+        List<T> GetList(Expression<Func<T, bool>> filter = null);
     }
 }

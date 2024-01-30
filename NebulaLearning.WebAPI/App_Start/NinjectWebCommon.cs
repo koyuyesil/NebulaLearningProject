@@ -67,8 +67,9 @@ namespace NebulaLearning.WebAPI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             // TODO : WEB API STEP 4 : Binding yerine load yapýlýr.
-            kernel.Load(new BusinessModule(), new AutoMapperModule()); // TODO : AUTOMAPPER STEP 6 :
-            // kernel.Load(new AutoMapperModule());
+            //kernel.Load(new BusinessModule(), new AutoMapperModule());
+            // TODO : AUTOMAPPER STEP 6 :
+            //kernel.Load(new AutoMapperModule());
         }
     }
 }

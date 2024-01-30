@@ -72,15 +72,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IExplanationDal.cs" />
+    <Compile Include="Abstract\IQuestionDal.cs" />
     <Compile Include="Abstract\IExamCategoryDal.cs" />
     <Compile Include="Abstract\IExamDal.cs" />
+    <Compile Include="Abstract\IChoiceDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\ChoiceDal.cs" />
     <Compile Include="Concrete\EntityFramework\ExamCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\DatabaseContex.cs" />
     <Compile Include="Concrete\EntityFramework\ExamDal.cs" />
+    <Compile Include="Concrete\EntityFramework\ExplanationDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\ChoiceMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\ExamCategoryMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\ExamMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\ExplanationMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\QuestionMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\UserMap.cs" />
+    <Compile Include="Concrete\EntityFramework\QuestionDal.cs" />
     <Compile Include="Concrete\EntityFramework\UserDal.cs" />
     <Compile Include="Concrete\NHibernate\ExamCategoryDal.cs" />
     <Compile Include="Concrete\NHibernate\ExamDal.cs" />
