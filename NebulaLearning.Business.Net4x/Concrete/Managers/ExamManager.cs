@@ -52,7 +52,6 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
             return _examDal.Get(e => e.ExamId == id);
         }
 
-
         [CacheAspect(typeof(MemoryCacheManager))]
         [SecuredOperation(Roles = "Admin,Editor,Student")]
         public List<Exam> GetList()

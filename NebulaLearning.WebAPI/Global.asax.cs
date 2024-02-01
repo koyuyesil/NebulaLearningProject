@@ -11,6 +11,10 @@ namespace NebulaLearning.WebAPI
     {
         protected void Application_Start()
         {
+            // TODO : https://stackoverflow.com/questions/12641386/failed-to-serialize-the-response-in-web-api
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

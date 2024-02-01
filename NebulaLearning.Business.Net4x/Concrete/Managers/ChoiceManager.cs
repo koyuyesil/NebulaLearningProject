@@ -3,6 +3,7 @@ using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.ValidationRules.FluentValidation;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.AuthorizationAspects;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.CacheAspects;
+using NebulaLearning.Core.Net4x.Aspects.PostSharp.TransactionAspect;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft;
 using NebulaLearning.DataAccess.Net4x.Abstract;
