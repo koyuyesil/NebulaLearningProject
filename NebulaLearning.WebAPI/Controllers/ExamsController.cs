@@ -17,7 +17,7 @@ namespace NebulaLearning.WebAPI.Controllers
         [Route("add")]
         public Exam Add()
         {
-            return examService.Add(new Exam() { ExamName = "Yeni Sınav - " + DateTime.Now, ExamResult = 100, ExamDuration = 30, ExamDescription = "Açıklama", ExamCategoryId = 4 });
+            return examService.Add(new Exam() { Name = "Yeni Sınav - " + DateTime.Now, Result = 100, Duration = 30, Description = "Açıklama", CategoryId = 4 });
         }
 
         [AcceptVerbs("GET", "POST")]
@@ -25,7 +25,7 @@ namespace NebulaLearning.WebAPI.Controllers
         [Route("update/{id}")]
         public Exam Update(int id)
         {
-            return examService.Update(new Exam() { ExamId = id, ExamName = "Güncellendi - " + DateTime.Now, ExamResult = 100, ExamDuration = 30, ExamDescription = "Açıklama", ExamCategoryId = 4 });
+            return examService.Update(new Exam() { Id = id, Name = "Güncellendi - " + DateTime.Now, Result = 100, Duration = 30, Description = "Açıklama", CategoryId = 4 });
         }
 
         [AcceptVerbs("GET", "POST")]
@@ -33,7 +33,7 @@ namespace NebulaLearning.WebAPI.Controllers
         [Route("delete/{id}")]
         public Exam Delete(int id)
         {
-            return examService.Delete(new Exam() { ExamId = id });
+            return examService.Delete(new Exam() { Id = id });
         }
 
         [Route("get/{id}")]

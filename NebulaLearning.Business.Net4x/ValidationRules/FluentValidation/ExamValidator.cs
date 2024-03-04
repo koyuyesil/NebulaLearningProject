@@ -10,12 +10,12 @@ namespace NebulaLearning.Business.Net4x.ValidationRules.FluentValidation
     {
         public ExamValidator()
         {
-            RuleFor(e => e.ExamCategoryId).NotEmpty().WithMessage("Boş olamaz!").LessThan(5).WithMessage("5'ten küçük olmalı!").GreaterThan(0).WithMessage("0'dan büyük olmalı!");
-            RuleFor(e => e.ExamName).NotEmpty().WithMessage("Boş olamaz!");
-            RuleFor(e => e.ExamDescription).NotEmpty().WithMessage("Boş olamaz!");
-            RuleFor(e => e.ExamDuration).NotEmpty().WithMessage("Boş olamaz!");
-            RuleFor(e => e.ExamResult).NotEmpty().WithMessage("Boş olamaz!");
-            RuleFor(e => e.ExamResult).NotEmpty().WithMessage("Boş olamaz!");
+            RuleFor(e => e.CategoryId).NotEmpty().WithMessage("Boş olamaz!").LessThan(5).WithMessage("5'ten küçük olmalı!").GreaterThan(0).WithMessage("0'dan büyük olmalı!");
+            RuleFor(e => e.Name).NotEmpty().WithMessage("Boş olamaz!");
+            RuleFor(e => e.Description).NotEmpty().WithMessage("Boş olamaz!");
+            RuleFor(e => e.Duration).NotEmpty().WithMessage("Boş olamaz!");
+            RuleFor(e => e.Result).NotEmpty().WithMessage("Boş olamaz!");
+            RuleFor(e => e.Result).NotEmpty().WithMessage("Boş olamaz!");
             //RuleFor(e => e.ExamResult).NotEmpty().Must(MustTrue); // MustTrue() methodu ile kullanım.
 
 

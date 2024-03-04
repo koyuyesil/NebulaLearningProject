@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace NebulaLearning.Business.Net4x.Abstract
 {
     // TODO Entity 6 : User için IUserService yazılır.
-    public interface IUserService // TODO : EKSİK 
+    public interface IUserService
     {
         User GetUserByUserNameAndPassword(string userName, string password);
         // TODO Complex Type : Step 8

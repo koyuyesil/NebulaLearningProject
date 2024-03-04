@@ -1,4 +1,5 @@
 ﻿using NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework.Mappings;
+using NebulaLearning.Entities.Net4x.ComplexTypes;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -28,6 +29,9 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework
         public DbSet<UserRole> UserRoles { get; set; }
         // TODO Complex Type : Step 7
         public DbSet<Role> Roles { get; set; }
+        public DbSet<ChoiceDetailDto> ChoiceDetails { get; set; }
+        public DbSet<QuestionDetailDto> QuestionDetails { get; set; }
+        public DbSet<ExamDetailDto> ExamDetails { get; set; }
 
 
 

@@ -9,11 +9,11 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.NHibernate.Mappings
         {
             Table(@"Exams");
             LazyLoad();
-            Id(x => x.ExamId).Column("ExamId");
-            Map(x => x.ExamResult).Column("ExamResult");
-            Map(x => x.ExamDuration).Column("ExamDuration");
-            Map(x => x.ExamName).Column("ExamName");
-            Map(x => x.ExamCategoryId).Column("ExamCategoryId");
+            Id(x => x.Id).Column("ExamId");
+            Map(x => x.Result).Column("ExamResult");
+            Map(x => x.Duration).Column("ExamDuration");
+            Map(x => x.Name).Column("ExamName");
+            Map(x => x.CategoryId).Column("ExamCategoryId");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace NebulaLearning.DataAccess.Net4x.Tests.NHibernate
         {
             ExamDal _examDal = new ExamDal(new SqlServerHelper());
             // select count(*) from Exams where ExamName like '%Math%'
-            var result = _examDal.GetList(e => e.ExamName.Contains("Bilgisayar"));
+            var result = _examDal.GetList(e => e.Name.Contains("Bilgisayar"));
             Assert.AreEqual(3, result.Count);
         }
     }

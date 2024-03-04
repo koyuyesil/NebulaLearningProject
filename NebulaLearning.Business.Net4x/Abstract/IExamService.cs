@@ -5,7 +5,7 @@ using System.ServiceModel;
 namespace NebulaLearning.Business.Net4x.Abstract
 {
     [ServiceContract]
-    public interface IExamService // TODO : EKSİK
+    public interface IExamService
     {
         [OperationContract]
         Exam Add(Exam exam);

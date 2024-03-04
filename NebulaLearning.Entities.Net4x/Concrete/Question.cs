@@ -8,5 +8,6 @@ namespace NebulaLearning.Entities.Net4x.Concrete
         public virtual string Content { get; set; }
         public virtual string Type { get; set; }
         public virtual int CategoryId { get; set; }
+        public virtual int ExamId { get; set; } 
     }
 }

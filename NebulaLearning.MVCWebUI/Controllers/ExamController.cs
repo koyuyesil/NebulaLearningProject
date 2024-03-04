@@ -24,7 +24,7 @@ namespace NebulaLearning.MVCWebUI.Controllers
         }
         public string Add()
         {
-            _examService.Add(new Exam { ExamCategoryId = 1, ExamName = "Coğrafya", ExamDuration = 30, ExamDescription = "Coğrafya 1. Sınav", ExamResult = 5 });
+            _examService.Add(new Exam { CategoryId = 1, Name = "Coğrafya", Duration = 30, Description = "Coğrafya 1. Sınav", Result = 5 });
             return "Added";
         }
         public string AddTransactional()
@@ -32,19 +32,19 @@ namespace NebulaLearning.MVCWebUI.Controllers
             _examService.TransactionalOperation(
                 new Exam
             {
-                ExamCategoryId = 1,
-                ExamName = "Bilgisayar",
-                ExamDuration = 30,
-                ExamDescription = "Sınav Açıklaması",
-                ExamResult = 1
+                CategoryId = 1,
+                Name = "Bilgisayar",
+                Duration = 30,
+                Description = "Sınav Açıklaması",
+                Result = 1
             }, new Exam
             {
-                ExamId = 1,
-                ExamCategoryId = 8,
-                ExamName = "Data Science",
-                ExamDuration = 30,
-                ExamDescription = "Sınav Açıklaması",
-                ExamResult = 1
+                Id = 1,
+                CategoryId = 8,
+                Name = "Data Science",
+                Duration = 30,
+                Description = "Sınav Açıklaması",
+                Result = 1
             });
             return "Added";
         }

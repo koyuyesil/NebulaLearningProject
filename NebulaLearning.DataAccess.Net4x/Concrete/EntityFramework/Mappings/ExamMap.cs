@@ -8,13 +8,13 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework.Mappings
         public ExamMap()
         {
             ToTable(@"Exams", @"dbo");
-            HasKey(x => x.ExamId);
-            Property(x => x.ExamId).HasColumnName("ExamId");
-            Property(x => x.ExamName).HasColumnName("ExamName");
-            Property(x => x.ExamDescription).HasColumnName("ExamDescription");
-            Property(x => x.ExamDuration).HasColumnName("ExamDuration");
-            Property(x => x.ExamResult).HasColumnName("ExamResult");
-            Property(x => x.ExamCategoryId).HasColumnName("ExamCategoryId");
+            HasKey(x => x.Id);
+            Property(x => x.Id).HasColumnName("ExamId");
+            Property(x => x.Name).HasColumnName("ExamName");
+            Property(x => x.Description).HasColumnName("ExamDescription");
+            Property(x => x.Duration).HasColumnName("ExamDuration");
+            Property(x => x.Result).HasColumnName("ExamResult");
+            Property(x => x.CategoryId).HasColumnName("ExamCategoryId");
             
         }
     }

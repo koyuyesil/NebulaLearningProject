@@ -10,13 +10,12 @@ public class ExamService: IExamService
 {
     public ExamService()
     {
-        //
-        //TODO: Buraya oluşturucu mantığı ekleyin
-        //
-        // TODO : Önce ExamManager new lenir gereksinimleri görülür sonra modül olarak eklediğimiz InstanceFactory ile enekte edilir.
-        // Hata vermez dikkat et factory e git ve parametre olarak modülleri ekle
+        // Önce ExamManager new lenir gereksinimleri görülür.
+        // Sonra gereksinimler modül olarak, InstanceFactory ile enjekte edilir.
+        // Hata vermez dikkat et factory e git ve parametre olarak modülleri ekle.
+        // Core katmanında güvenlik etkin servis appde login yok unutma
     }
-    // core katmanında güvenlik etkin servis appde login yok unutma
+
     private IExamService examService = InstanceFactory.GetInstance<IExamService>();
 
     public Exam Add(Exam exam)

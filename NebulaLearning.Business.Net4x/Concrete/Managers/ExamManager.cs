@@ -49,7 +49,7 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         [SecuredOperation(Roles = "Admin,Editor,Student")]
         public Exam GetById(int id)
         {
-            return _examDal.Get(e => e.ExamId == id);
+            return _examDal.Get(e => e.Id == id);
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
