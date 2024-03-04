@@ -39,9 +39,8 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework
         // Normalde Class isimleri aynıysa otomatik map eder.
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // TODO Entity 5 : User için Users Mapping Configuration yapılır.
             modelBuilder.Configurations.Add(new ExamMap());
-            modelBuilder.Configurations.Add(new ExamCategoryMap());
-            modelBuilder.Configurations.Add(new UserMap());
         }
     }
 

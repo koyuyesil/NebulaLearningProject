@@ -95,6 +95,7 @@
     <Compile Include="Concrete\NHibernate\ExamDal.cs" />
     <Compile Include="Concrete\NHibernate\Helpers\SqlServerHelper.cs" />
     <Compile Include="Concrete\NHibernate\Mappings\ExamCategoryMap.cs" />
+    <Compile Include="Concrete\NHibernate\Mappings\ChoiceMap.cs" />
     <Compile Include="Concrete\NHibernate\Mappings\ExamMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

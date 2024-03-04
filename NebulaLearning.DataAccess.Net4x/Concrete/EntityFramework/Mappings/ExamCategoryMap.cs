@@ -9,8 +9,8 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework.Mappings
         {
             ToTable(@"ExamCategories", @"dbo");
             HasKey(x => x.CategoryId);
-            Property(x => x.CategoryId).HasColumnName("ExamCategoryId");
-            Property(x => x.CategoryName).HasColumnName("ExamCategoryName");
+            Property(x => x.CategoryId).HasColumnName("CategoryId");
+            Property(x => x.CategoryName).HasColumnName("CategoryName");
         }
     }
 }
