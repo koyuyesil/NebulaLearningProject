@@ -4,7 +4,7 @@ namespace NebulaLearning.Entities.Net4x.Concrete
 {
     public class ExamCategory : IEntity
     {
-        public virtual int CategoryId { get; set; }
-        public virtual string CategoryName { get; set; }
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
     }
 }

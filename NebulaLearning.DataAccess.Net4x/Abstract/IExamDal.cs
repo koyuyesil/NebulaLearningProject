@@ -8,6 +8,5 @@ namespace NebulaLearning.DataAccess.Net4x.Abstract
     public interface IExamDal:IEntityRepository<Exam>
     {
         List<ExamDetail> GetExamDetailList();
-        List<ExamDetailDto> GetExam();
     }
 }

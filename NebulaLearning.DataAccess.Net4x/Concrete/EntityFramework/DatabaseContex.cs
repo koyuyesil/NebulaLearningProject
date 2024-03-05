@@ -29,10 +29,6 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework
         public DbSet<UserRole> UserRoles { get; set; }
         // TODO Complex Type : Step 7
         public DbSet<Role> Roles { get; set; }
-        public DbSet<ChoiceDetailDto> ChoiceDetails { get; set; }
-        public DbSet<QuestionDetailDto> QuestionDetails { get; set; }
-        public DbSet<ExamDetailDto> ExamDetails { get; set; }
-
 
 
         // Model oluşturulurken override edilerek özel maping yapılması sağlanır.

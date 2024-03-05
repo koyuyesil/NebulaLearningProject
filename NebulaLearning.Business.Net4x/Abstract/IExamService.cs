@@ -1,4 +1,5 @@
-﻿using NebulaLearning.Entities.Net4x.Concrete;
+﻿using NebulaLearning.Entities.Net4x.ComplexTypes;
+using NebulaLearning.Entities.Net4x.Concrete;
 using System.Collections.Generic;
 using System.ServiceModel;
 
@@ -21,6 +22,9 @@ namespace NebulaLearning.Business.Net4x.Abstract
 
         [OperationContract]
         List<Exam> GetList();
+
+        [OperationContract]
+        List<ExamDetail> GetExamDetailList();
 
         [OperationContract]
         void TransactionalOperation(Exam toInsertExam, Exam toUpdateExam);//yukarıdakilere bağlı operasyon

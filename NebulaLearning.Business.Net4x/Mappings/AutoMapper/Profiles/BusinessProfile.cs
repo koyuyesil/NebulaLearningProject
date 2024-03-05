@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using NebulaLearning.Entities.Net4x.ComplexTypes;
 using NebulaLearning.Entities.Net4x.Concrete;
 
 
@@ -11,6 +12,7 @@ namespace NebulaLearning.Business.Net4x.Mappings.AutoMapper.Profiles
         public BusinessProfile()
         {
             CreateMap<Exam, Exam>();
+            CreateMap<ExamDetail, ExamDetail>();
         }
     }
 }

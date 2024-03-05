@@ -7,6 +7,7 @@ using NebulaLearning.Core.Net4x.Aspects.PostSharp.TransactionAspect;
 using NebulaLearning.Core.Net4x.Aspects.PostSharp.ValidationAspects;
 using NebulaLearning.Core.Net4x.CrossCuttingConserns.Caching.Microsoft;
 using NebulaLearning.DataAccess.Net4x.Abstract;
+using NebulaLearning.Entities.Net4x.ComplexTypes;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System.Collections.Generic;
 
@@ -65,6 +66,14 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         {
             _examDal.Add(toInsertExam);
             _examDal.Update(toUpdateExam);
+        }
+
+        [CacheAspect(typeof(MemoryCacheManager))]
+        [SecuredOperation(Roles = "Admin,Editor,Student")]
+        public List<ExamDetail> GetExamDetailList() //complex type
+        {
+            return _mapper.Map<List<ExamDetail>>(_examDal.GetExamDetailList());
+            return _examDal.GetExamDetailList();   
         }
     }
 }

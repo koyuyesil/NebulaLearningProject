@@ -1,5 +1,6 @@
 ﻿using NebulaLearning.Business.Net4x.Abstract;
 using NebulaLearning.Business.Net4x.DependencyResolvers.Ninject;
+using NebulaLearning.Entities.Net4x.ComplexTypes;
 using NebulaLearning.Entities.Net4x.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace NebulaLearning.WebAPI.Controllers
         [Route("add")]
         public Exam Add()
         {
-            return examService.Add(new Exam() { Name = "Yeni Sınav - " + DateTime.Now, Result = 100, Duration = 30, Description = "Açıklama", CategoryId = 4 });
+            return examService.Add(new Exam() { Name = "Yeni Sınav - " + DateTime.Now, Result = 100, Duration = 30, Description = "Açıklama", CategoryId = 2 });
         }
 
         [AcceptVerbs("GET", "POST")]
@@ -45,6 +46,12 @@ namespace NebulaLearning.WebAPI.Controllers
         public List<Exam> GetList()
         {
             return examService.GetList();
+        }
+
+        [Route("details")]
+        public List<ExamDetail> GetExamDetailList()
+        {
+            return examService.GetExamDetailList();
         }
     }
 }

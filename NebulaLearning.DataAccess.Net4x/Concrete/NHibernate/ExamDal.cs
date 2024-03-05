@@ -15,22 +15,17 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.NHibernate
             _NHibernateHelper = nHibernateHelper;
         }
 
-        public List<ExamDetailDto> GetExam()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public List<ExamDetail> GetExamDetailList()
         {
             using (var session=_NHibernateHelper.OpenSession())
             {
                 var result = from p in session.Query<Exam>()
-                             join c in session.Query<ExamCategory>() on p.CategoryId equals c.CategoryId
+                             join c in session.Query<ExamCategory>() on p.CategoryId equals c.Id
                              select new ExamDetail
                              {
                                  ExamId = p.CategoryId,
                                  ExamName = p.Name,
-                                 CategoryName = c.CategoryName
+                                 CategoryName = c.Name
                              };
                 return result.ToList();
             }
