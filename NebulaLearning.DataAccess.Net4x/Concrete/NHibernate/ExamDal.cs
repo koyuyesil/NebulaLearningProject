@@ -23,8 +23,8 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.NHibernate
                              join c in session.Query<ExamCategory>() on p.CategoryId equals c.Id
                              select new ExamDetail
                              {
-                                 ExamId = p.CategoryId,
-                                 ExamName = p.Name,
+                                 Id = p.CategoryId,
+                                 Name = p.Name,
                                  CategoryName = c.Name
                              };
                 return result.ToList();

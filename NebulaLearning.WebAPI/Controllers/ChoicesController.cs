@@ -17,7 +17,7 @@ namespace NebulaLearning.WebAPI.Controllers
         [Route("add")]
         public Choice Add()
         {
-            return choiceService.Add(new Choice() { Content = "Yeni Şık - " + DateTime.Now, IsCorrect = false, QuestionId = 99 });
+            return choiceService.Add(new Choice() { Content = "Yeni Şık - " + DateTime.Now, IsCorrect = false, QuestionId = 1 });
         }
 
         [AcceptVerbs("GET", "POST")]

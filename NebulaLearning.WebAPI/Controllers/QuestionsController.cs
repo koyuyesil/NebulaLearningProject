@@ -17,7 +17,7 @@ namespace NebulaLearning.WebAPI.Controllers
         [Route("add")]
         public Question Add()
         {
-            return questionService.Add(new Question() { Content = "Yeni Soru - " + DateTime.Now, Type="Science", CategoryId = 99 });
+            return questionService.Add(new Question() { ExamId = 4, Content = "Yeni Soru - " + DateTime.Now, Type = "Science", CategoryId = 99 });
         }
 
         [AcceptVerbs("GET", "POST")]
@@ -41,7 +41,7 @@ namespace NebulaLearning.WebAPI.Controllers
         {
             return questionService.GetById(id);
         }
-        
+
         public List<Question> GetList()
         {
             return questionService.GetList();

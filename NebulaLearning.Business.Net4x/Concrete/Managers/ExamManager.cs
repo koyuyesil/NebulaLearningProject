@@ -12,7 +12,7 @@ using NebulaLearning.Entities.Net4x.Concrete;
 using System.Collections.Generic;
 
 namespace NebulaLearning.Business.Net4x.Concrete.Managers
-{  
+{
     public class ExamManager : IExamService
     {// LogAspect Class yada Method üstü yerine assembly seviyesine (AssemblyInfo.cs) expression ile taşındı.
         private IExamDal _examDal;
@@ -73,10 +73,11 @@ namespace NebulaLearning.Business.Net4x.Concrete.Managers
         public List<ExamDetail> GetExamDetailList() //complex type
         {
             return _mapper.Map<List<ExamDetail>>(_examDal.GetExamDetailList());
-            return _examDal.GetExamDetailList();   
+            return _examDal.GetExamDetailList();
         }
     }
 }
+
 // Dip Not: Bu tarz validation işlemleri, istemci tarafında da otomatik arayüze uygulanabiliyor.
 //[CacheRemoveAspect("regexpatern",typeof(MemoryCacheManager))]
 // TODO : WEB API STEP 6 : EntityFramework Serileştirme hatası Select Operasyonu ile çözülür.

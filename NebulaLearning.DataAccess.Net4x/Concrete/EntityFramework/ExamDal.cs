@@ -15,15 +15,25 @@ namespace NebulaLearning.DataAccess.Net4x.Concrete.EntityFramework
             {
                 var result = from e in contex.Exams
                              join c in contex.ExamCategories on e.CategoryId equals c.Id
+                             join q in contex.Questions on e.Id equals q.ExamId into questions
+                             where e.Id == 4   // todo : buradasın
                              select new ExamDetail
                              {
-                                 ExamId = e.Id,
-                                 ExamName = e.Name,
-                                 CategoryName = c.Name
-                             }; 
+                                 Id = e.Id,
+                                 Name = e.Name,
+                                 Description = e.Description,
+                                 Duration = e.Duration,
+                                 Result = e.Result,
+                                 CategoryId = c.Id,
+                                 CategoryName = c.Name,
+                                 QuestionList = questions.ToList(),
+                                 ChoiceList = (
+                                    from q in questions
+                                    join ch in contex.Choices on q.Id equals ch.QuestionId into choices
+                                    select choices.ToList()).ToList()
+                             };
                 return result.ToList();
             }
         }
-
     }
 }
